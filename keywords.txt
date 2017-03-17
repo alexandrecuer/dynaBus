@@ -1,0 +1,22 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+dynaBus	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+nb	KEYWORD2
+ROMtochar	KEYWORD2
+find	KEYWORD2
+get28temperature	KEYWORD2
+get26temperature	KEYWORD2
+get26voltage	KEYWORD2
+read26PageZero	KEYWORD2
+write26PageZero	KEYWORD2
+
+
+
