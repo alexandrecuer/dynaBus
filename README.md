@@ -27,38 +27,38 @@ Please note that you need to install the OneWire library first in your arduino l
 You can find various PCB designs in the PCB subdirectory in order to construct your own single wire Bus
 Usage
 
-Bus bus (uint8_t pin)
+#dynaBus bus (uint8_t pin)
 Create the Bus object, using a specific pin
 
-bus.begin()
+#bus.begin()
 Initialize the bus with a number of devices equal to zero
 
-bus.void find()
+#bus.void find()
 scan the bus and stores the ROMs in an the ROM array
 
-bus.nb()
+#bus.nb()
 return the number of devices on the bus
 
-bus[i]
+#bus[i]
 return the byte i stored in the ROM array
 
-bus.ROMtochar(byte j, const char* separator="", Print &print=Serial)
+#bus.ROMtochar(byte j, const char* separator="", Print &print=Serial)
 print the ROM number j to char
 
-bus.get28temperature(byte j)
+#bus.get28temperature(byte j)
 return temperature from the device j which is assumed to be a DS1820 sensor
 
-bus.get26temperature(byte j)
+#bus.get26temperature(byte j)
 return temperature from the device j which is assumed to be a DS2438 sensor
 
-bus.get26voltage(byte j, char *mode)
+#bus.get26voltage(byte j, char *mode)
 return the vdd of vad voltage on the device j which is assumed to be a DS2438 sensor
 mode can be "vdd" or "vad"
 
-bus.read26PageZero(byte j, uint8_t *data)
+#bus.read26PageZero(byte j, uint8_t *data)
 read page zero on the device j which is assumed to be a DS2438 sensor, and stores the result in data
 could be private only - used by get26voltage and get26temperature
 
-bus.write26PageZero(byte j, uint8_t *data)
+#bus.write26PageZero(byte j, uint8_t *data)
 write page zero on the device j which is assumed to be a DS2438 sensor
 could be private only - used by get26voltage
