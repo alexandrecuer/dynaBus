@@ -26,7 +26,7 @@ Please note that you need to install the OneWire library first in your arduino l
 
 You can find various PCB designs in the PCB subdirectory in order to construct your own single wire Bus
 
-#Usage
+# Usage
 
 ### dynaBus bus (uint8_t pin)
 Create the Bus object, using a specific pin
