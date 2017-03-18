@@ -25,7 +25,8 @@ Anyway it should work with more than 2 devices on the bus
 Please note that you need to install the OneWire library first in your arduino library directory
 
 You can find various PCB designs in the PCB subdirectory in order to construct your own single wire Bus
-Usage
+
+#Usage
 
 ### dynaBus bus (uint8_t pin)
 Create the Bus object, using a specific pin
