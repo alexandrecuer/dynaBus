@@ -10,12 +10,12 @@ before_install:
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
 
 install:
-  - echo $PWD
   - ln -s $PWD /usr/local/share/arduino/libraries/dynaBus
   #- arduino --install-library "OneWire"
   - git clone https://github.com/alexandrecuer/OneWire.git /usr/local/share/arduino/libraries/OneWire
   
 script:
+  - "echo $PWD"
 #  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_TH_w_watchdog/EMONClient_TH_w_watchdog.ino
 #  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_temperature_humidity/EMONClient_temperature_humidity.ino
   - arduino --verify --board ${BOARD} $PWD/examples/dynaBus_DS2438_HIH4000_DS18B20/dynaBus_DS2438_HIH4000_DS18B20.ino
@@ -27,24 +27,3 @@ notifications:
     
 env:
  - BOARD=arduino:avr:uno
-# - BOARD=arduino:avr:yun
-# - BOARD=arduino:avr:diecimila:cpu=atmega168
-# - BOARD=arduino:avr:diecimila:cpu=atmega328
-# - BOARD=arduino:avr:nano:cpu=atmega168
-# - BOARD=arduino:avr:nano:cpu=atmega328
-# - BOARD=arduino:avr:mega:cpu=atmega1280
-# - BOARD=arduino:avr:mega:cpu=atmega2560
-# - BOARD=arduino:avr:megaADK
-# - BOARD=arduino:avr:leonardo
-# - BOARD=arduino:avr:micro
-# - BOARD=arduino:avr:esplora
-# - BOARD=arduino:avr:mini:cpu=atmega168
-# - BOARD=arduino:avr:mini:cpu=atmega328
-# - BOARD=arduino:avr:ethernet
-# - BOARD=arduino:avr:bt:cpu=atmega168
-# - BOARD=arduino:avr:bt:cpu=atmega328
-# - BOARD=arduino:avr:lilypad:cpu=atmega168
-# - BOARD=arduino:avr:lilypad:cpu=atmega328
-# - BOARD=arduino:avr:pro:cpu=atmega168
-# - BOARD=arduino:avr:pro:cpu=atmega328
-# - BOARD=arduino:sam:arduino_due_x
