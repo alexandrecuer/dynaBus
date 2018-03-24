@@ -13,7 +13,7 @@ before_install:
 
 install:
   - ln -s $PWD /usr/local/share/arduino/libraries/dynaBus
-  - arduino --install-library "OneWire"
+  - arduino --install-library "OneWire/OneWire"
   
 script:
 #  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_TH_w_watchdog/EMONClient_TH_w_watchdog.ino
