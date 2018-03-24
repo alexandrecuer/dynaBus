@@ -11,10 +11,11 @@ before_install:
 
 install:
   - ln -s $PWD /usr/local/share/arduino/libraries/dynaBus
+  - arduino --install-library "OneWire"
   
 script:
-  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_TH_w_watchdog/EMONClient_TH_w_watchdog.ino
-  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_temperature_humidity/EMONClient_temperature_humidity.ino
+#  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_TH_w_watchdog/EMONClient_TH_w_watchdog.ino
+#  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_temperature_humidity/EMONClient_temperature_humidity.ino
   - arduino --verify --board ${BOARD} $PWD/examples/dynaBus_DS2438_HIH4000_DS18B20/dynaBus_DS2438_HIH4000_DS18B20.ino
   
 notifications:
