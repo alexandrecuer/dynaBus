@@ -13,11 +13,13 @@ install:
   - ln -s $PWD /usr/local/share/arduino/libraries/dynaBus
   - git clone https://github.com/alexandrecuer/OneWire /usr/local/share/arduino/libraries/OneWire
   #- arduino --install-library "OneWire"
+  - arduino --install-library "SPI"
+  - arduino --install-library "Ethernet"
   
 script:
   - "echo $PWD"
 #  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_TH_w_watchdog/EMONClient_TH_w_watchdog.ino
-#  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_temperature_humidity/EMONClient_temperature_humidity.ino
+  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_temperature_humidity/EMONClient_temperature_humidity.ino
   - arduino --verify --board ${BOARD} $PWD/examples/dynaBus_DS2438_HIH4000_DS18B20/dynaBus_DS2438_HIH4000_DS18B20.ino
   
 notifications:
