@@ -12,7 +12,7 @@ before_install:
 install:
   - ln -s $PWD /usr/local/share/arduino/libraries/dynaBus
   - git clone https://github.com/alexandrecuer/OneWire /usr/local/share/arduino/libraries/OneWire
-  - arduino --install-library "OneWire"
+  #- arduino --install-library "OneWire"
   
 script:
   - "echo $PWD"
