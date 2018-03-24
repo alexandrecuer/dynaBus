@@ -9,11 +9,12 @@ before_install:
   - sudo mv arduino-1.6.5 /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
   - git clone https://github.com/alexandrecuer/OneWire.git
-  - ls -al
 
 install:
   - ln -s $PWD /usr/local/share/arduino/libraries/dynaBus
-  - arduino --install-library "OneWire/OneWire"
+  - cd OneWire
+  - ls -al
+  - arduino --install-library "OneWire"
   
 script:
 #  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_TH_w_watchdog/EMONClient_TH_w_watchdog.ino
