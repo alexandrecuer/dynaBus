@@ -13,8 +13,6 @@ install:
   - ln -s $PWD /usr/local/share/arduino/libraries/dynaBus
   - git clone https://github.com/alexandrecuer/OneWire /usr/local/share/arduino/libraries/OneWire
   #- arduino --install-library "OneWire"
-  - arduino --install-library "SPI"
-  - arduino --install-library "Ethernet"
   
 script:
   - "echo $PWD"
