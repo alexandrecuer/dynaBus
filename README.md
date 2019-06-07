@@ -1,6 +1,6 @@
 # dynaBus
-1wire customized library for DS2438 HIH4000 and DS18B20
-Bus
+1wire customized library for DS2438 HIH4000 and DS18B20 Bus
+[![Build Status](https://travis-ci.org/alexandrecuer/dynaBus.svg?branch=master)](https://travis-ci.org/alexandrecuer/dynaBus)
 
 Single Wire Bus - a subclass of the OneWire library
 

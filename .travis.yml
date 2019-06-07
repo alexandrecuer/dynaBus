@@ -1,0 +1,29 @@
+language: c
+
+before_install:
+  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16"
+  - sleep 3
+  - export DISPLAY=:1.0
+  - wget http://downloads.arduino.cc/arduino-1.8.1-linux64.tar.xz
+  - tar xf arduino-1.8.1-linux64.tar.xz
+  - sudo mv arduino-1.8.1 /usr/local/share/arduino
+  - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
+
+install:
+  - ln -s $PWD /usr/local/share/arduino/libraries/dynaBus
+  - git clone https://github.com/alexandrecuer/OneWire /usr/local/share/arduino/libraries/OneWire
+  #- arduino --install-library "OneWire"
+  
+script:
+  - "echo $PWD"
+#  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_TH_w_watchdog/EMONClient_TH_w_watchdog.ino
+  - arduino --verify --board ${BOARD} $PWD/examples/EMONClient_temperature_humidity/EMONClient_temperature_humidity.ino
+  - arduino --verify --board ${BOARD} $PWD/examples/dynaBus_DS2438_HIH4000_DS18B20/dynaBus_DS2438_HIH4000_DS18B20.ino
+  
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+    
+env:
+ - BOARD=arduino:avr:uno
