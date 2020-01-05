@@ -10,6 +10,7 @@ or
 https://github.com/PaulStoffregen/OneWire
 
 Bus class scans the 1 wire Bus connected to an arduino UNO analog pin and stores the ROMs in an array
+
 1-wire components are commercialized by Maxim Integrated Products, Inc.
 https://www.maximintegrated.com/en/products/digital/one-wire.html
 
