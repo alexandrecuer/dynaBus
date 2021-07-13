@@ -56,18 +56,18 @@ void dynaBus::ROMtochar(byte j, const char* separator, Print &p){
 void dynaBus::find(){
     byte addr[8];
     byte i;
-	int n=0;
-	while(search(addr))_nb++;
-	_addrt=(uint8_t *)malloc(_nb*8);
-	//filling _addrt with the single wire ROM byte
-	while(search(addr)){for(i=0;i<8;i++)_addrt[n*8+i]=addr[i];n++;}
+    int n=0;
+    while(search(addr))_nb++;
+    _addrt=(uint8_t *)malloc(_nb*8);
+    //filling _addrt with the single wire ROM byte
+    while(search(addr)){for(i=0;i<8;i++)_addrt[n*8+i]=addr[i];n++;}
   }
 
 float dynaBus::get28temperature(byte j){
     byte i;
     byte data[9];
-	uint8_t addr[8];
-	for(i=0;i<8;i++)addr[i]=_addrt[j*8+i];
+    uint8_t addr[8];
+    for(i=0;i<8;i++)addr[i]=_addrt[j*8+i];
     reset();
     select(addr);
     //temperature conversion
@@ -100,10 +100,10 @@ float dynaBus::get28temperature(byte j){
   }
 
 float dynaBus::get26temperature(byte j){
-	byte i;
+    byte i;
     uint8_t data[9];
-	uint8_t addr[8];
-	for(i=0;i<8;i++)addr[i]=_addrt[j*8+i];
+    uint8_t addr[8];
+    for(i=0;i<8;i++)addr[i]=_addrt[j*8+i];
     reset();
     select(addr);
     //temperature conversion 
@@ -115,11 +115,11 @@ float dynaBus::get26temperature(byte j){
   }
 
 float dynaBus::get26voltage(byte j, const char mode[3]){
-	byte i;
+    byte i;
     uint8_t data[9];
     uint8_t addr[8];
-	for(i=0;i<8;i++)addr[i]=_addrt[j*8+i];
-	
+    for(i=0;i<8;i++)addr[i]=_addrt[j*8+i];
+    
     read26PageZero(j,data);
     
     //data[0] | 0x08 > bit 5 set to 1 in byte 0 page 0 > VDD selection 
@@ -151,10 +151,10 @@ float dynaBus::get26voltage(byte j, const char mode[3]){
     else return 10000000000;
   }
 
-boolean dynaBus::read26PageZero(byte j, uint8_t *data) {
-	byte i;
-	uint8_t addr[8];
-	for(i=0;i<8;i++)addr[i]=_addrt[j*8+i];
+bool dynaBus::read26PageZero(byte j, uint8_t *data) {
+    byte i;
+    uint8_t addr[8];
+    for(i=0;i<8;i++)addr[i]=_addrt[j*8+i];
     reset();
     select(addr);
     //recall memory command
@@ -171,9 +171,9 @@ boolean dynaBus::read26PageZero(byte j, uint8_t *data) {
   }
 
 void dynaBus::write26PageZero(byte j, uint8_t *data) {
-	byte i;
-	uint8_t addr[8];
-	for(i=0;i<8;i++)addr[i]=_addrt[j*8+i];
+    byte i;
+    uint8_t addr[8];
+    for(i=0;i<8;i++)addr[i]=_addrt[j*8+i];
     reset();
     select(addr);
     //write scratchpad 
