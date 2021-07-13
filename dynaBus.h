@@ -34,7 +34,7 @@ public:
   float get26temperature(byte j);
   //mode can be "vdd" or "vad"
   float get26voltage(byte j, const char mode[3]);
-  boolean read26PageZero(byte j, uint8_t *data);
+  bool read26PageZero(byte j, uint8_t *data);
   void write26PageZero(byte j, uint8_t *data);
 private:
   byte _nb;
