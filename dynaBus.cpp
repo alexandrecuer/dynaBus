@@ -38,19 +38,19 @@ uint8_t dynaBus::operator[](int index) const
 //we want to print all zero even non significative ones
 //the core of this fonction comes from ethersia by Nicholas Humfrey
 void dynaBus::ROMtochar(byte j, const char* separator, Print &p){
-	char str[2];
-	for(int i=0;i<8;i++){
-		str[0] = (_addrt[8*j+i] >> 4) & 0x0f;
-		str[1] = _addrt[8*j+i] & 0x0f;
-		for (int j=0; j<2; j++) {
-			// base for converting single digit numbers to ASCII is 48
-			// base for 10-16 to become lower-case characters a-f is 87
-			if (str[j] > 9) str[j] += 39;
-			str[j] += 48;
-			p.print(str[j]);
-			}
-		if(i<7)p.print(separator);
-		}
+    char str[2];
+    for(int i=0;i<8;i++){
+        str[0] = (_addrt[8*j+i] >> 4) & 0x0f;
+        str[1] = _addrt[8*j+i] & 0x0f;
+        for (int j=0; j<2; j++) {
+            // base for converting single digit numbers to ASCII is 48
+            // base for 10-16 to become lower-case characters a-f is 87
+            if (str[j] > 9) str[j] += 39;
+            str[j] += 48;
+            p.print(str[j]);
+        }
+    if(i<7)p.print(separator);
+    }
 }
 
 void dynaBus::find(){
