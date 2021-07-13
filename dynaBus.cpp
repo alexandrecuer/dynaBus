@@ -1,7 +1,7 @@
 /*
 Copyright (c) 2016, Alexandre CUER (alexandre.cuer@wanadoo.fr)
 
-	This program is free software: you can redistribute it and/or modify
+    This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -22,11 +22,11 @@ Copyright (c) 2016, Alexandre CUER (alexandre.cuer@wanadoo.fr)
 
 void dynaBus::begin(){
     _nb=0;
-  }
+}
 
 int dynaBus::nb(){
     return _nb;
-  }
+}
  
 uint8_t dynaBus::operator[](int index) const
 {
@@ -61,7 +61,7 @@ void dynaBus::find(){
     _addrt=(uint8_t *)malloc(_nb*8);
     //filling _addrt with the single wire ROM byte
     while(search(addr)){for(i=0;i<8;i++)_addrt[n*8+i]=addr[i];n++;}
-  }
+}
 
 float dynaBus::get28temperature(byte j){
     byte i;
@@ -97,7 +97,7 @@ float dynaBus::get28temperature(byte j){
     //// default is 12 bit resolution, 750 ms conversion time
     if(crc8(data, 8) == data[8]) return (float)raw / 16.0;
     else return 10000000000;
-  }
+}
 
 float dynaBus::get26temperature(byte j){
     byte i;
@@ -112,7 +112,7 @@ float dynaBus::get26temperature(byte j){
     delay(10);
     if (read26PageZero(j,data)) return (double)(((((int16_t)data[2]) << 8) | (data[1] & 0x0ff)) >> 3) * 0.03125;
     else return 10000000000;
-  }
+}
 
 float dynaBus::get26voltage(byte j, const char mode[3]){
     byte i;
@@ -149,7 +149,7 @@ float dynaBus::get26voltage(byte j, const char mode[3]){
         return (((data[4] << 8) & 0x00300) | (data[3] & 0x0ff)) / 100.0;
       }
     else return 10000000000;
-  }
+}
 
 bool dynaBus::read26PageZero(byte j, uint8_t *data) {
     byte i;
@@ -168,7 +168,7 @@ bool dynaBus::read26PageZero(byte j, uint8_t *data) {
     //we read 9 bytes - byte 8 is a CRC error code
     for (int i = 0; i < 9; i++)data[i] = read();
     return crc8(data, 8) == data[8];
-  }
+}
 
 void dynaBus::write26PageZero(byte j, uint8_t *data) {
     byte i;
